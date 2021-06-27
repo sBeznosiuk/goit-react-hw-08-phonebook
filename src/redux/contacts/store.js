@@ -4,9 +4,9 @@ import {
   createReducer,
   getDefaultMiddleware,
 } from '@reduxjs/toolkit';
-import axios from 'axios';
 import logger from 'redux-logger';
 import {
+  persistReducer,
   persistStore,
   FLUSH,
   REHYDRATE,
@@ -28,31 +28,13 @@ import {
   fetchContactsRequest,
   fetchContactsSuccess,
 } from './actions';
-
-// const contactsReducer = createReducer(
-//   {
-//     items: [],
-//     filter: '',
-//   },
-//   {
-//     [addContactSuccess]: (state, { payload }) => doesExist(state, payload),
-//     [removeContactSuccess]: (state, { payload }) => ({
-//       ...state,
-//       items: state.items.filter(({ id }) => id !== payload),
-//     }),
-
-//     [filterContacts]: (state, { payload }) => ({
-//       ...state,
-//       filter: payload,
-//     }),
-//   },
-// );
+import authReducer from '../auth/reducer';
 
 const itemsReducer = createReducer([], {
   [fetchContactsSuccess]: (state, { payload }) => payload,
   [addContactSuccess]: (state, { payload }) => doesExist(state, payload),
   [removeContactSuccess]: (state, { payload }) =>
-    state.filter(({ id }) => id !== Number(payload)),
+    state.filter(({ id }) => id !== payload),
 });
 
 const filterReducer = createReducer('', {
@@ -81,6 +63,12 @@ function doesExist(state, payload) {
   }
 }
 
+const persistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
+
 const contactsReducer = combineReducers({
   items: itemsReducer,
   filter: filterReducer,
@@ -88,6 +76,7 @@ const contactsReducer = combineReducers({
 
 const rootReducer = combineReducers({
   contacts: contactsReducer,
+  auth: persistReducer(persistConfig, authReducer),
   loading,
 });
 
@@ -108,4 +97,4 @@ const store = configureStore({
 
 const persistor = persistStore(store);
 
-export default store;
+export { store, persistor };

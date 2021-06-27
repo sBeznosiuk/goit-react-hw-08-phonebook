@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyledForm } from './styles';
 import PropTypes from 'prop-types'; // ES6
 import { connect } from 'react-redux';
-import { addContact } from '../redux/operations';
+import { addContact } from '../redux/contacts/operations';
 
 class Form extends Component {
   static propTypes = {

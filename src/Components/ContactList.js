@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import ContactListItem from './ContactListItem';
 import { StyledList } from './styles';
 import { connect } from 'react-redux';
-import { removeContact, fetchContacts } from '../redux/operations';
+import { removeContact, fetchContacts } from '../redux/contacts/operations';
 import Loader from 'react-loader-spinner';
 import {
   getLoading,
   getContacts,
   getFilter,
-} from '../redux/contacts-selectors';
+} from '../redux/contacts/contacts-selectors';
 
 class ContactList extends Component {
   componentDidMount() {

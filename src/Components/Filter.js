@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { filterContacts } from '../redux/actions';
+import { filterContacts } from '../redux/contacts/actions';
 
 const Filter = ({ onFilter }) => {
   return (
