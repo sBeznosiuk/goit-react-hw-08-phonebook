@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getIsAuthenticated, getUserEmail } from '../redux/auth/auth-selectors';
+import { getIsAuthenticated } from '../redux/auth/auth-selectors';
 
 import AuthNav from './AuthNav';
 import UserMenu from './UserMenu';

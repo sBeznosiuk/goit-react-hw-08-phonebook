@@ -3,6 +3,7 @@ import { StyledForm } from './styles';
 import PropTypes from 'prop-types'; // ES6
 import { connect } from 'react-redux';
 import { addContact } from '../redux/contacts/operations';
+import Button from '@material-ui/core/Button';
 
 class Form extends Component {
   static propTypes = {
@@ -62,7 +63,7 @@ class Form extends Component {
             required
           />
         </label>
-        <button type="submit">Add contact</button>
+        <Button type="submit">Add contact</Button>
       </StyledForm>
     );
   }

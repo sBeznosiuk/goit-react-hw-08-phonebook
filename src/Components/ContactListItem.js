@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 const ContactListItem = ({ id, name, number, onClickRemove }) => (
   <li id={id}>
     {name}: {number}
-    <button type="button" id={id} onClick={onClickRemove}>
+    <Button type="button" id={id} onClick={onClickRemove}>
       delete
-    </button>
+    </Button>
   </li>
 );
 
 ContactListItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
   onClickRemove: PropTypes.func,

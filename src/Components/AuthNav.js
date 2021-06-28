@@ -1,7 +1,5 @@
 import React from 'react';
-import { Route, NavLink } from 'react-router-dom';
-import Login from './Login';
-import Registration from './Registration';
+import { NavLink } from 'react-router-dom';
 
 const AuthNav = () => (
   <>
@@ -11,9 +9,6 @@ const AuthNav = () => (
     <NavLink to="/login" exact>
       Логин
     </NavLink>
-
-    <Route path="/register" component={Registration} />
-    <Route path="/login" component={Login} />
   </>
 );
 

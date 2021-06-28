@@ -1,16 +1,12 @@
 import { combineReducers, createReducer } from '@reduxjs/toolkit';
 import {
-  regsiterRequest,
-  regsitersError,
+  registerError,
   registerSuccess,
   loginError,
-  loginRequest,
   loginSuccess,
   logoutError,
   logoutSuccess,
-  logoutRequest,
   getCurrentUserError,
-  getCurrentUserRequest,
   getCurrentUserSuccess,
 } from './actions';
 
@@ -29,41 +25,19 @@ const token = createReducer(null, {
   [logoutSuccess]: () => null,
 });
 
-// const loading = createReducer(false, {
-//   [addContactRequest]: () => true,
-//   [addContactSuccess]: () => false,
-//   [addContactError]: () => false,
-//   [removeContactRequest]: () => true,
-//   [removeContactSuccess]: () => false,
-//   [removeContactError]: () => false,
-//   [fetchContactsRequest]: () => true,
-//   [fetchContactsSuccess]: () => false,
-//   [fetchContactsError]: () => false,
-// });
-
-// const rootReducer = combineReducers({
-//   contacts: contactsReducer,
-//   loading,
-// });
-
-// const middleware = [
-//   ...getDefaultMiddleware({
-//     serializableCheck: {
-//       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//     },
-//   }),
-//   logger,
-// ];
-
-// const store = configureStore({
-//   reducer: rootReducer,
-//   devTools: process.env.NODE_ENV === 'development',
-//   middleware,
-// });
-
-// const persistor = persistStore(store);
+const isAuthenticated = createReducer(false, {
+  [registerSuccess]: () => true,
+  [loginSuccess]: () => true,
+  [logoutSuccess]: () => false,
+  [getCurrentUserSuccess]: () => true,
+  [registerError]: () => false,
+  [loginError]: () => false,
+  [logoutError]: () => false,
+  [getCurrentUserError]: () => false,
+});
 
 export default combineReducers({
   user,
+  isAuthenticated,
   token,
 });

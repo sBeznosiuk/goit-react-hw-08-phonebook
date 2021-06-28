@@ -57,7 +57,7 @@ export const login = credentials => async dispatch => {
 };
 
 export const logout = () => async dispatch => {
-  dispatch(loginRequest());
+  dispatch(logoutRequest());
 
   try {
     await axios.post('/users/logout');

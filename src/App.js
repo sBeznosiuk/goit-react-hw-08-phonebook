@@ -6,6 +6,10 @@ import AppBar from './Components/AppBar';
 import { Route } from 'react-router-dom';
 import { getCurrentUser } from './redux/auth/operations';
 import { connect } from 'react-redux';
+import PrivateRoute from './Components/routes/PrivateRoute';
+import Login from './Components/Login';
+import Registration from './Components/Registration';
+import PublicRoute from './Components/routes/PublicRoute';
 
 class App extends Component {
   componentDidMount() {
@@ -18,14 +22,16 @@ class App extends Component {
           path="/"
           render={props => <AppBar {...props} isAuthenticated={true} />}
         />
-        <Route
+        <PublicRoute path="/register" component={Registration} />
+        <PublicRoute path="/login" component={Login} />
+        <PrivateRoute
           path="/contacts"
-          render={() => (
+          render={props => (
             <>
-              <ContactForm />
+              <ContactForm {...props} />
               <h2>Contacts</h2>
-              <Filter />
-              <ContactList />
+              <Filter {...props} />
+              <ContactList {...props} />
             </>
           )}
         />
