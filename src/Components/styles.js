@@ -5,25 +5,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: flex-start;
 
-  & button {
-    height: 35px;
-    background-color: white;
-    outline: none;
-    border-radius: 3px;
-  }
-
-  & button:hover {
-    color: white;
-    background-color: black;
-    transition: 250ms;
-  }
-
-  & button:active {
-    background-color: blue;
-  }
-  & input {
-    margin-bottom: 30px;
-    border-radius: 3px;
+ 
   }
 `;
 
@@ -36,20 +18,7 @@ const StyledList = styled.ul`
 
   & li button {
     height: 25px;
-    background-color: white;
-    outline: none;
-    border-radius: 3px;
     margin-left: 30px;
-  }
-
-  & li button:hover {
-    color: white;
-    background-color: black;
-    transition: 250ms;
-  }
-
-  & li button:active {
-    background-color: blue;
   }
 `;
 

@@ -11,3 +11,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left a{
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.left a:hover {
+  color: blueviolet;
+  transition: 250ms;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right .text {
+  margin-right: 15px;
+}
+
+.right .button {
+  margin-right: 10px;
+}
+
+.right a{
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+.right a:hover {
+  color: blueviolet;
+  transition: 250ms;
+}
+
+.con {
+  display: flex;
+}

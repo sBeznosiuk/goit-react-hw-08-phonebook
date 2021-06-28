@@ -1,14 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Typography } from '@material-ui/core';
 
 const AuthNav = () => (
   <>
-    <NavLink to="/register" exact>
-      Регистрация
-    </NavLink>
-    <NavLink to="/login" exact>
-      Логин
-    </NavLink>
+    <div className="left">
+      <Typography>
+        <Link to="/register" exact className="left">
+          Регистрация
+        </Link>
+      </Typography>
+    </div>
+    <div className="right">
+      <Typography>
+        <Link to="/login" exact className="right">
+          Логин
+        </Link>
+      </Typography>
+    </div>
   </>
 );
 

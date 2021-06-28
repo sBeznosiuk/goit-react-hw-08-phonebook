@@ -10,6 +10,7 @@ import PrivateRoute from './Components/routes/PrivateRoute';
 import Login from './Components/Login';
 import Registration from './Components/Registration';
 import PublicRoute from './Components/routes/PublicRoute';
+import { Typography, Container, CssBaseline } from '@material-ui/core';
 
 class App extends Component {
   componentDidMount() {
@@ -28,10 +29,21 @@ class App extends Component {
           path="/contacts"
           render={props => (
             <>
-              <ContactForm {...props} />
-              <h2>Contacts</h2>
-              <Filter {...props} />
-              <ContactList {...props} />
+              <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <div>
+                  <ContactForm {...props} />
+                  <Typography
+                    component="h2"
+                    variant="h5"
+                    style={{ marginTop: 30 }}
+                  >
+                    Contacts
+                  </Typography>
+                  <Filter {...props} />
+                  <ContactList {...props} />
+                </div>
+              </Container>
             </>
           )}
         />

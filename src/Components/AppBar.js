@@ -7,7 +7,7 @@ import UserMenu from './UserMenu';
 
 const AppBar = ({ isAuthenticated }) => (
   <header>
-    <nav>{isAuthenticated ? <UserMenu /> : <AuthNav />}</nav>
+    <nav className="Header">{isAuthenticated ? <UserMenu /> : <AuthNav />}</nav>
   </header>
 );
 const mapStateToProps = state => ({

@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import { Typography, Button } from '@material-ui/core';
 
 const ContactListItem = ({ id, name, number, onClickRemove }) => (
-  <li id={id}>
-    {name}: {number}
-    <Button type="button" id={id} onClick={onClickRemove}>
+  <li id={id} className="con">
+    <Typography component="p" variant="p">
+      {name}: {number}
+    </Typography>
+    <button type="button" id={id} onClick={onClickRemove}>
       delete
-    </Button>
+    </button>
   </li>
 );
 

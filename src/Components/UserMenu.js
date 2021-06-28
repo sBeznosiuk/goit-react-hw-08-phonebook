@@ -2,18 +2,29 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getUserEmail } from '../redux/auth/auth-selectors';
 import { logout } from '../redux/auth/operations';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Button, Typography } from '@material-ui/core';
 
 const UserMenu = ({ email, onLogout }) => (
   <>
-    <div>
-      <NavLink to="/contacts">Список контактов</NavLink>
+    <div className="left">
+      <Typography>
+        <Link to="/contacts">Список контактов</Link>
+      </Typography>
     </div>
-    <div>
-      <p>{email}</p>
-      <button type="button" onClick={onLogout}>
-        Выйти
-      </button>
+    <div className="right">
+      <Typography className="text" component="p" variant="p">
+        {email}
+      </Typography>
+      <Button
+        type="button"
+        onClick={onLogout}
+        className="button"
+        variant="contained"
+        color="primary"
+      >
+        Log out
+      </Button>
     </div>
   </>
 );

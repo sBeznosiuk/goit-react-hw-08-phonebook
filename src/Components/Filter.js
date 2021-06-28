@@ -2,10 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { filterContacts } from '../redux/contacts/actions';
+import { TextField } from '@material-ui/core';
 
 const Filter = ({ onFilter }) => {
   return (
-    <input type="text" placeholder="Find contact by name" onChange={onFilter} />
+    <TextField
+      type="text"
+      label="Filter contacts"
+      onChange={onFilter}
+      margin="normal"
+    />
   );
 };
 

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ContactListItem from './ContactListItem';
-import { StyledList } from './styles';
 import { connect } from 'react-redux';
 import { removeContact, fetchContacts } from '../redux/contacts/operations';
 import Loader from 'react-loader-spinner';
@@ -10,6 +9,7 @@ import {
   getContacts,
   getFilter,
 } from '../redux/contacts/contacts-selectors';
+import { StyledList } from './styles';
 
 class ContactList extends Component {
   componentDidMount() {
