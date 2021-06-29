@@ -6,14 +6,14 @@ const AuthNav = () => (
   <>
     <div className="left">
       <Typography>
-        <Link to="/register" exact className="left">
+        <Link to="/register" className="left">
           Регистрация
         </Link>
       </Typography>
     </div>
     <div className="right">
       <Typography>
-        <Link to="/login" exact className="right">
+        <Link to="/login" className="right">
           Логин
         </Link>
       </Typography>

@@ -1,13 +1,19 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 const ContactListItem = ({ id, name, number, onClickRemove }) => (
   <li id={id} className="con">
-    <Typography component="p" variant="p">
+    <Typography component="p" variant="overline">
       {name}: {number}
     </Typography>
-    <button type="button" id={id} onClick={onClickRemove}>
+    <button
+      type="button"
+      id={id}
+      onClick={onClickRemove}
+      color="secondary"
+      variant="outlined"
+    >
       delete
     </button>
   </li>

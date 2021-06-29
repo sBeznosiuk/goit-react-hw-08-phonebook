@@ -13,7 +13,7 @@ const UserMenu = ({ email, onLogout }) => (
       </Typography>
     </div>
     <div className="right">
-      <Typography className="text" component="p" variant="p">
+      <Typography className="text" component="p" variant="overline">
         {email}
       </Typography>
       <Button
